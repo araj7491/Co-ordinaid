@@ -60,7 +60,7 @@ Co-Ordinaid is developed as part of an Advanced Java Programming academic projec
 ## 🧭 System Flow & ER Diagram
 
 ### 📊 Flowchart:
-[Flowchart](demo/live.mp4)
+[Flowchart](demo/flowchart.png)
 
 ### 📐 ER Diagram:
 [ER Diagram](demo/er-diagram.png)
@@ -129,7 +129,7 @@ Volunteer-Management-System/
 ## 📸 Live Demonstration
 
 [Video Demonstration](demo/live.mp4)
-
+[Screenshots](demo/screenshots/)
 
 ---
 
