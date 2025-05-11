@@ -122,10 +122,9 @@ Volunteer-Management-System/
 
 ![Video Demonstration](live/Co-ordinaid.mp4)
 
-(*See `/screenshots` folder or presentation for images.*)
 
 ---
-
+s
 ## 👨‍💻 Team Members
 
 | Name            | Role                 | 
