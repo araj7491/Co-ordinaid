@@ -56,7 +56,7 @@ Co-Ordinaid is developed as part of an Advanced Java Programming academic projec
 ## 🧭 System Flow & ER Diagram
 
 ### 📊 Flowchart:
-![Flowchart](src/main/resources/UpdatedReversedEngineeredEERDiagram.jpg)
+[Flowchart](demo/flowchart.png)
 
 ### 📐 ER Diagram:
 - **Many-to-Many**: Volunteer ⬌ Nonprofit
