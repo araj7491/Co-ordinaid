@@ -121,7 +121,7 @@ Volunteer-Management-System/
 
 ## 📸 Live Demonstration
 
-[Video Demonstration](live/Co-ordinaid.mp4)
+[Video Demonstration](demo/live.mp4)
 
 
 ---
