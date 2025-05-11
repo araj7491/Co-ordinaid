@@ -12,11 +12,12 @@ A full-stack Java web application designed to streamline the management of volun
 - [System Flow & ER Diagram](#system-flow--er-diagram)
 - [Project Structure](#project-structure)
 - [How to Run (Eclipse Setup)](#how-to-run-eclipse-setup)
-- [Screenshots](#screenshots)
+- [Live Demonstration](#live-demonstration)
 - [Team Members](#team-members)
 - [References](#references)
 
 ---
+
 <a name="introduction"></a>
 ## ✅ Introduction
 
@@ -28,6 +29,7 @@ Co-Ordinaid is developed as part of an Advanced Java Programming academic projec
 
 ---
 
+<a name="features"></a>
 ## 💡 Features
 
 - Volunteer and NGO registration
@@ -40,6 +42,7 @@ Co-Ordinaid is developed as part of an Advanced Java Programming academic projec
 
 ---
 
+<a name="technology-stack"></a>
 ## 🧰 Technology Stack
 
 | Layer        | Technology Used                          |
@@ -53,6 +56,7 @@ Co-Ordinaid is developed as part of an Advanced Java Programming academic projec
 
 ---
 
+<a name="system-flow--er-diagram"></a>
 ## 🧭 System Flow & ER Diagram
 
 ### 📊 Flowchart:
@@ -67,6 +71,7 @@ Co-Ordinaid is developed as part of an Advanced Java Programming academic projec
 
 ---
 
+<a name="project-structure"></a>
 ## 📁 Project Structure
 
 ```
@@ -87,6 +92,7 @@ Volunteer-Management-System/
 
 ---
 
+<a name="how-to-run-eclipse-setup"></a>
 ## 🛠️ How to Run (Eclipse Setup)
 
 ### ⚙️ Prerequisites:
@@ -119,6 +125,7 @@ Volunteer-Management-System/
 
 ---
 
+<a name="live-demonstration"></a>
 ## 📸 Live Demonstration
 
 [Video Demonstration](demo/live.mp4)
@@ -126,6 +133,7 @@ Volunteer-Management-System/
 
 ---
 
+<a name="team-members"></a>
 ## 👨‍💻 Team Members
 
 | Name            | Role                 | 
@@ -137,6 +145,7 @@ Volunteer-Management-System/
 
 ---
 
+<a name="references"></a>
 ## 🔗 References
 
 - [Spring Boot Docs](https://spring.io/projects/spring-boot)
