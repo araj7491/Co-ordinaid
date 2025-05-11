@@ -17,7 +17,7 @@ A full-stack Java web application designed to streamline the management of volun
 - [References](#references)
 
 ---
-
+<a name="introduction"></a>
 ## ✅ Introduction
 
 Co-Ordinaid is developed as part of an Advanced Java Programming academic project for managing end-to-end volunteer operations. It provides intuitive modules for:
