@@ -63,8 +63,6 @@ Co-Ordinaid is developed as part of an Advanced Java Programming academic projec
 - **One-to-Many**: Nonprofit ⬌ Assignment ⬌ Timesheet
 - **One-to-Many**: Volunteer ⬌ Skills
 
-> Full diagram included in:  
-> `src/main/resources/UpdatedReversedEngineeredEERDiagram.jpg`
 
 ---
 
@@ -120,13 +118,9 @@ Volunteer-Management-System/
 
 ---
 
-## 📸 Screenshots
+## 📸 Live Demonstration
 
-- `Edit Volunteer`
-- `Edit Timesheet`
-- `Landing Page`
-- `Navbar & Routing`
-- Responsive layout with form validation
+![Video Demonstration](live/Co-ordinaid.mp4)
 
 (*See `/screenshots` folder or presentation for images.*)
 
@@ -134,12 +128,12 @@ Volunteer-Management-System/
 
 ## 👨‍💻 Team Members
 
-| Name            | Role                 | Department |
-|-----------------|----------------------|------------|
-| Ankit Raj       | Team Lead & Docs     | CSE-D      |
-| Nishu Kaushik   | Frontend Developer   | CSE-C      |
-| Shweta Verma    | Backend Developer    | CSE-C      |
-| Aditi Yadav     | Database Management  | CSE-D      |
+| Name            | Role                 | 
+|-----------------|----------------------|
+| Ankit Raj       | Team Lead & Docs     | 
+| Nishu Kaushik   | Frontend Developer   | 
+| Shweta Verma    | Backend Developer    |
+| Aditi Yadav     | Database Management  | 
 
 ---
 
