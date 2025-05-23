@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<style>
+    body {
+        background-image: url('media/images/green.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Co-ordinaid</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    
+    
+</head>
+<body>
+
+<!-- Top Navigation Ribbon -->
+<div class="top-tabs">
+    <div class="top-tabs-left">
+        <a href="/" class="btn btn-dark btn-sm">Co-ordinaid</a>
+    </div>
+    
+    <div class="top-tabs-right">
+        <a href="volunteers" class="btn btn-primary btn-sm" style="background-color: #0056b3; pointer-events: none;">Volunteer</a>
+        <a href="nonprofits" class="btn btn-outline-light btn-sm">NGOs</a>
+        <a href="assignments" class="btn btn-outline-light btn-sm">Assignment</a>
+        <a href="skills" class="btn btn-outline-light btn-sm">Skill</a>
+        <a href="timesheets" class="btn btn-outline-light btn-sm">Timesheet</a>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <!-- Error Messages -->
+    <div class="col-12 mb-2 text-center" th:if="${!errors.isEmpty()}">
+        <p class="alert alert-danger" th:each="error : ${errors}" th:text="${error.message}">Error message</p>
+    </div>
+
+    <!-- Volunteer Form -->
+    <div class="row mb-4 border border-dark bg-white p-3 rounded">
+        <div class="col-12 text-center mb-3">
+            <h3>Add Volunteer</h3>
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <form action="addVolunteer" method="POST">
+                <div class="form-group row">
+                    <label for="firstName" class="col-sm-3 col-form-label">First Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="firstName" id="firstName" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="lastName" class="col-sm-3 col-form-label">Last Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="lastName" id="lastName" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="phoneNumber" class="col-sm-3 col-form-label">Phone Number</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="email" id="email" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="city" class="col-sm-3 col-form-label">City</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="city" id="city" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="state" class="col-sm-3 col-form-label">State Code</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="state" id="state" placeholder="ex: Uttar Pradesh (UP)" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="nonprofitID" class="col-sm-3 col-form-label">NGOs</label>
+                    <div class="col-sm-9">
+                        <select id="nonprofitID" name="nonprofitID" class="form-control" multiple>
+                            <option th:each="nonprofit : ${nonprofits}"
+                                    th:value="${nonprofit.id}"
+                                    th:text="${nonprofit.companyName}">
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Add Volunteer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Volunteer Table -->
+    <div class="row mb-4 border border-dark bg-white p-3 rounded">
+        <div class="col text-center">
+            <h4>Volunteer List</h4>
+            <table class="table table-striped mt-3">
+                <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Details</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="volunteer : ${volunteers}">
+                    <td th:text="${volunteer.firstName}">First</td>
+                    <td th:text="${volunteer.lastName}">Last</td>
+                    <td th:text="${volunteer.city}">City</td>
+                    <td th:text="${volunteer.state}">State</td>
+                    <td><a th:href="@{/detailVolunteer(id=${volunteer.id})}">Details</a></td>
+                    <td><a th:href="@{/editVolunteer(id=${volunteer.id})}">Edit</a></td>
+                    <td><a th:href="@{/deleteVolunteer(id=${volunteer.id})}">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<footer class="text-center mt-5 py-4" style="background-color: rgba(255, 255, 255, 0.9); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 -2px 8px rgba(0,0,0,0.1);">
+    <p style="margin: 0; font-size: 0.95rem; color: #333;">&copy; 2025 Co-ordinaid. All rights reserved.</p>
+    <p style="margin: 0; font-size: 0.95rem; color: #555;">Contact us: <a href="mailto:coordinaid@outlook.com" style="color: #007bff; text-decoration: none;">coordinaid@outlook.com</a></p>
+</footer>
+</body>
+</html>

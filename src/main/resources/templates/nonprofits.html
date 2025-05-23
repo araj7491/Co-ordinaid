@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Co-ordinaid</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+          
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+    body {
+        background-image: url('media/images/yellow.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- Top Navigation Ribbon -->
+<div class="top-tabs">
+    <div class="top-tabs-left">
+        <a href="/" class="btn btn-dark btn-sm">Co-ordinaid</a>
+    </div>
+    <div class="top-tabs-right">
+        <a href="volunteers" class="btn btn-outline-light btn-sm">Volunteer</a>
+        <a href="nonprofits" class="btn btn-primary btn-sm" style="background-color: #0056b3; pointer-events: none;">NGOs</a>
+        <a href="assignments" class="btn btn-outline-light btn-sm">Assignment</a>
+        <a href="skills" class="btn btn-outline-light btn-sm">Skill</a>
+        <a href="timesheets" class="btn btn-outline-light btn-sm">Timesheet</a>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Error Messages -->
+    <div class="col-12 mb-2 text-center" th:if="${!errors.isEmpty()}">
+        <p class="alert alert-danger" th:each="error : ${errors}" th:text="${error.message}">Error message</p>
+    </div>
+
+    <!-- Nonprofit Form -->
+    <div class="row mb-4 border border-dark bg-white p-3 rounded">
+        <div class="col-12 text-center mb-3">
+            <h3>Add NGO</h3>
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <form action="addNonprofit" method="POST">
+                <div class="form-group row">
+                    <label for="companyName" class="col-sm-3 col-form-label">NGO Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="companyName" id="companyName" class="form-control"/>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="phoneNumber" class="col-sm-3 col-form-label">Phone Number</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="phoneNumber" id="phoneNumber" class="form-control"/>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="email" id="email" class="form-control"/>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="address" class="col-sm-3 col-form-label">Address</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="address" id="address" class="form-control"/>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="mission" class="col-sm-3 col-form-label">Mission</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="mission" id="mission" class="form-control"/>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg px-4" style="min-width: 180px; font-size: 1.1rem;">Add NGO</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Nonprofit Table -->
+    <div class="row mb-4 border border-dark bg-white p-3 rounded">
+        <div class="col text-center">
+            <h4>NGOs List</h4>
+            <table class="table table-striped mt-3">
+                <thead>
+                <tr>
+                    <th>NGO Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Mission</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="nonprofit : ${nonprofits}">
+                    <td th:text="${nonprofit.companyName}">NGO Name</td>
+                    <td th:text="${nonprofit.phoneNumber}">Phone Number</td>
+                    <td th:text="${nonprofit.email}">Email</td>
+                    <td th:text="${nonprofit.address}">Address</td>
+                    <td th:text="${nonprofit.mission}">Mission</td>
+                    <td><a th:href="@{/editNonprofit(id=${nonprofit.id})}">Edit</a></td>
+                    <td><a th:href="@{/deleteNonprofit(id=${nonprofit.id})}">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+<footer class="text-center mt-5 py-4" style="background-color: rgba(255, 255, 255, 0.9); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 -2px 8px rgba(0,0,0,0.1);">
+    <p style="margin: 0; font-size: 0.95rem; color: #333;">&copy; 2025 Co-ordinaid. All rights reserved.</p>
+    <p style="margin: 0; font-size: 0.95rem; color: #555;">Contact us: <a href="mailto:coordinaid@outlook.com" style="color: #007bff; text-decoration: none;">coordinaid@outlook.com</a></p>
+</footer>
+</body>
+</html>

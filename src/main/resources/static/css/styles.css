@@ -1,0 +1,225 @@
+html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            padding-top: 100px;
+            padding-bottom: 40px;
+        }
+
+        /* Blue ribbon */
+        .top-tabs {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 3;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .top-tabs-left,
+        .top-tabs-center,
+        .top-tabs-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .top-tabs-left {
+            justify-content: flex-start;
+        }
+
+        .top-tabs-right {
+            justify-content: flex-end;
+        }
+
+        .top-tabs a {
+            color: white;
+            font-weight: bold;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        .top-tabs a:hover {
+            text-decoration: underline;
+        }
+
+        .top-tabs h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .border-dark {
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #2d3436;
+        }
+
+        .btn {
+            min-width: 120px;
+            max-width: 140px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 6px;
+            transition: all 0.3s ease;
+            border-width: 2px;
+        }
+
+        .btn-volunteer {
+            border-color: #00b894;
+            color: #00b894;
+            background-color: #d1f5ec;
+        }
+
+        .btn-volunteer:hover {
+            background-color: #00b894;
+            color: white;
+        }
+
+        .btn-nonprofit {
+            border-color: #fdcb6e;
+            color: #fd8c00;
+            background-color: #fff1dd;
+        }
+
+        .btn-nonprofit:hover {
+            background-color: #fdcb6e;
+            color: white;
+        }
+
+        .btn-assignment {
+            border-color: #6c5ce7;
+            color: #6c5ce7;
+            background-color: #eae5ff;
+        }
+
+        .btn-assignment:hover {
+            background-color: #6c5ce7;
+            color: white;
+        }
+
+        .btn-skill {
+            border-color: #0984e3;
+            color: #0984e3;
+            background-color: #d7edff;
+        }
+
+        .btn-skill:hover {
+            background-color: #0984e3;
+            color: white;
+        }
+
+        .btn-timesheet {
+            border-color: #d63031;
+            color: #d63031;
+            background-color: #ffdada;
+        }
+
+        .btn-timesheet:hover {
+            background-color: #d63031;
+            color: white;
+        }
+
+        #faq-section .border-dark {
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        /* New styles for dynamic text columns */
+        .welcome-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .welcome-card {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .welcome-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .welcome-card h3 {
+            color: #007bff;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        .welcome-card p {
+            font-style: italic;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .top-tabs {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .top-tabs-left,
+            .top-tabs-center,
+            .top-tabs-right {
+                justify-content: center;
+                margin-bottom: 5px;
+            }
+
+            .btn {
+                min-width: 100px;
+                margin: 5px;
+            }
+
+            .welcome-card {
+                min-width: 100%;
+            }
+        }

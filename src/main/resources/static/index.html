@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Co-ordinaid</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <link rel="stylesheet" href="css/styles.css">
+   
+</head>
+<body>
+
+<!-- Background Video -->
+<video autoplay muted loop id="bg-video">
+    <source src="/media/background.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+
+<!-- Top Navigation Ribbon -->
+<div class="top-tabs">
+    <div class="top-tabs-left">
+        <a href="javascript:void(0)" onclick="window.location.href=window.location.pathname">Home</a>
+        <a href="#faq-section">FAQs</a>
+    </div>
+    <div class="top-tabs-center">
+        <h1>Co-ordinaid</h1>
+    </div>
+    <div class="top-tabs-right"></div>
+</div>
+
+<!-- Main Content Container -->
+<div class="container">
+    <div class="row m-4 border border-dark button-row">
+        <a href="volunteers" class="btn btn-volunteer btn-lg">Volunteer</a>
+        <a href="nonprofits" class="btn btn-nonprofit btn-lg">NGOs</a>
+        <a href="assignments" class="btn btn-assignment btn-lg">Assignment</a>
+        <a href="skills" class="btn btn-skill btn-lg">Skill</a>
+        <a href="timesheets" class="btn btn-timesheet btn-lg">Timesheet</a>
+    </div>
+
+    <!-- Dynamic Welcome Columns -->
+    <div class="row m-4">
+        <div class="welcome-columns">
+            <div class="welcome-card">
+                <h3>STREAMLINED MANAGEMENT</h3>
+                <p>Welcome to Co-ordinaid! Our platform revolutionizes how you connect with and manage volunteers, making coordination effortless and efficient.</p>
+            </div>
+            <div class="welcome-card">
+                <h3>CENTRALIZED DATA ACCESS</h3>
+                <p>Easily add volunteers, create assignments, and track timesheets - all in one intuitive, organized system designed for nonprofits.</p>
+            </div>
+            <div class="welcome-card">
+                <h3>FOCUS ON YOUR MISSION</h3>
+                <p>Spend less time on administration and more time making an impact. Let us handle the logistics while you focus on changing the world.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="faq-section" class="row m-4">
+        <div class="col border border-dark p-4">
+            <h3 class="text-center mb-4">Frequently Asked Questions</h3>
+            <div>
+                <strong>Q1: What is the Co-ordinaid?</strong>
+                <p>A centralized platform to manage volunteers, assignments, skills, timesheets, and nonprofits for community service and engagement.</p>
+            </div>
+            <div>
+                <strong>Q2: How do I add a new volunteer?</strong>
+                <p>Click on the "Volunteer" tab and use the add button to input volunteer details such as name, contact, and skills.</p>
+            </div>
+            <div>
+                <strong>Q3: Can I track volunteer hours?</strong>
+                <p>Yes, use the "Timesheet" tab to log and view volunteer working hours against assignments.</p>
+            </div>
+            <div>
+                <strong>Q4: What are assignments?</strong>
+                <p>Assignments represent tasks or roles assigned to volunteers by nonprofits. You can manage them under the "Assignment" tab.</p>
+            </div>
+            <div>
+                <strong>Q5: Who can use this system?</strong>
+                <p>This system is ideal for nonprofits, volunteer coordinators, and anyone managing community-driven events or social service initiatives.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+    // Smooth scrolling for FAQ link
+    document.querySelector('a[href="#faq-section"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+
+<!-- Footer -->
+<footer class="text-center mt-5 py-4" style="background-color: rgba(255, 255, 255, 0.9); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 -2px 8px rgba(0,0,0,0.1);">
+    <p style="margin: 0; font-size: 0.95rem; color: #333;">&copy; 2025 Co-ordinaid. All rights reserved.</p>
+    <p style="margin: 0; font-size: 0.95rem; color: #555;">Contact us: <a href="mailto:coordinaid@outlook.com" style="color: #007bff; text-decoration: none;">coordinaid@outlook.com</a></p>
+</footer>
+
+</body>
+</html>
