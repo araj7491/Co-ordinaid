@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Co-ordinaid</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+    body {
+        background-image: url('media/images/green.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+</head>
+<body>
+
+<!-- Top Navigation Ribbon -->
+<div class="top-tabs">
+    <div class="top-tabs-left">
+        <a href="/" class="btn btn-dark btn-sm">Co-ordinaid</a>
+    </div>
+    
+    <div class="top-tabs-right">
+        <a href="volunteers" class="btn btn-primary btn-sm" style="background-color: #0056b3; pointer-events: none;">Volunteer</a>
+        <a href="nonprofits" class="btn btn-outline-light btn-sm">NGOs</a>
+        <a href="assignments" class="btn btn-outline-light btn-sm">Assignment</a>
+        <a href="skills" class="btn btn-outline-light btn-sm">Skill</a>
+        <a href="timesheets" class="btn btn-outline-light btn-sm">Timesheet</a>
+    </div>
+</div>
+
+<!-- Main Body of Page -->
+<div class="container">
+
+    <!--   *********** Details *********** -->
+    <!--   *********** Details *********** -->
+    <!--   *********** Details *********** -->
+<div class="row m-4 border border-dark" style="background-color: white; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    
+    
+  
+        <div class="col-6 text-right mt-3 mb-3"><strong>First Name:</strong></div>
+        <div class="col-6 text-left mt-3 mb-3">
+            <span th:text="${volunteer.firstName}">display First Name</span>
+        </div>
+
+        <div class="col-6 text-right mb-3"><strong>Last Name:</strong></div>
+        <div class="col-6 text-left mb-3">
+            <span th:text="${volunteer.lastName}">display Last Name</span>
+        </div>
+
+        <div class="col-6 text-right mb-3"><strong>Phone Number:</strong></div>
+        <div class="col-6 text-left mb-3">
+            <span th:text="${volunteer.phoneNumber}">display Phone Number</span>
+        </div>
+
+        <div class="col-6 text-right mb-3"><strong>Email:</strong></div>
+        <div class="col-6 text-left mb-3">
+            <span th:text="${volunteer.email}">display Email</span>
+        </div>
+
+        <div class="col-6 text-right mb-3"><strong>City:</strong></div>
+        <div class="col-6 text-left mb-3">
+            <span th:text="${volunteer.city}">display City</span>
+        </div>
+
+        <div class="col-6 text-right mb-3"><strong>State:</strong></div>
+        <div class="col-6 text-left mb-3">
+            <span th:text="${volunteer.state}">display State</span>
+        </div>
+
+        <!--        Nonprofits GO HERE-->
+        <div class="col-6 text-right mb-3"><strong>NGOs:</strong></div>
+        <div class="col-6 text-left mb-3">
+            <span th:each="nonprofit : ${nonprofits}">
+                <span th:text="${nonprofit.companyName}">display NGOs</span><br/>
+            </span>
+        </div>
+
+        <div class="col-12 text-center m-3">
+            <a href="#" th:href="@{/editVolunteer(id=${volunteer.id})}" class="btn btn-primary btn-md m-3">Edit</a>
+            <a href="#" th:href="@{/deleteVolunteer(id=${volunteer.id})}" class="btn btn-danger btn-md m-3">Delete</a>
+           <a href="#" th:href="@{/volunteers}" class="btn btn-success btn-md m-3">Save</a>
+           
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+<!-- Footer -->
+<footer class="text-center mt-5 py-4" style="background-color: rgba(255, 255, 255, 0.9); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 -2px 8px rgba(0,0,0,0.1);">
+    <p style="margin: 0; font-size: 0.95rem; color: #333;">&copy; 2025 Co-ordinaid. All rights reserved.</p>
+    <p style="margin: 0; font-size: 0.95rem; color: #555;">Contact us: <a href="mailto:coordinaid@outlook.com" style="color: #007bff; text-decoration: none;">coordinaid@outlook.com</a></p>
+</footer>
+
+</body>
+</html>

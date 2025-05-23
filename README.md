@@ -1,168 +1,59 @@
-<a id="top"></a>
-# Co-Ordinaid: Volunteer Management System
+# Co-ordinaid
+Co-ordinaid for Nonprofit companies to help them organize their volunteers, assignments and timesheets. I used Spring Boot with JDBC Template to read and write to the database and Thymeleaf to display the frontend content.
 
-A full-stack Java web application designed to streamline the management of volunteers, assignments, timesheets, skills, and nonprofit organizations (NGOs). Developed using **Spring Boot**, **JDBC**, **Thymeleaf**, and **MySQL**, this system empowers NGOs with a centralized platform to manage their volunteers efficiently.
+## Relationships
 
----
+many-to-many: Volunteers and Nonprofit 
 
-## 📌 Table of Contents
+one-to-many: Volunteer-Skill, Volunteer-Timesheet, Assignment-Timesheet, Nonporfit-Assignment
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [System Flow & ER Diagram](#system-flow--er-diagram)
-- [Project Structure](#project-structure)
-- [How to Run (Eclipse Setup)](#how-to-run-eclipse-setup)
-- [Live Demonstration](#live-demonstration)
-- [Team Members](#team-members)
-- [References](#references)
+## Visuals
+ERD:
 
-[▲](#top)
----
+![UpdatedReversedEngineeredEERDiagram](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/eb5f5576-48d1-4d67-80e8-96cc6dec6216)
 
-<a name="introduction"></a>
-## ✅ Introduction
+Home Screen:
+![homeScreen](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/2cda397e-d7c1-4901-aecc-0cebd516063c)
 
-Co-Ordinaid is developed as part of an Advanced Java Programming academic project for managing end-to-end volunteer operations. It provides intuitive modules for:
-- Registering NGOs and volunteers
-- Assigning tasks
-- Logging work hours (timesheets)
-- Managing volunteer skills
+Nonprofit:
+![Nonprofit](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/5c28d954-a4a1-4252-bf0b-1d887a9546b2)
 
-[▲](#top)
----
+Edit Nonprofit:
+![editNonprofit](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/c155d0a0-cfb2-4aae-9fec-cae3b9b59929)
 
-<a name="features"></a>
-## 💡 Features
+Volunteer:
+![Volunteer](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/5cbb19ba-f167-4a6d-90ee-b019749e8c81)
 
-- Volunteer and NGO registration
-- Assignments linked to both
-- Timesheet logging and editing
-- Skill management for volunteers
-- Role-based form validation
-- MySQL database integration
-- Clean, mobile-responsive UI
+Edit Volunteer:
+![editNonprofit](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/8a181ba1-5af4-4b74-94cb-1389003f7024)
 
-[▲](#top)
----
+Volunteer Details:
+![volunteerDetails](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/55cba8c6-b20b-4031-abb3-b377d423c7f8)
 
-<a name="technology-stack"></a>
-## 🧰 Technology Stack
+Assignment:
+![Assignment](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/5ab7e615-eb5b-457e-ac6c-a8df2c39b638)
 
-| Layer        | Technology Used                          |
-|--------------|-------------------------------------------|
-| Frontend     | HTML, CSS, Bootstrap 4, Thymeleaf         |
-| Backend      | Java, Spring Boot, Spring MVC             |
-| Data Access  | Spring JDBC (JdbcTemplate)                |
-| Database     | MySQL                                     |
-| IDE          | Eclipse IDE                               |
-| Build Tool   | Maven                                     |
+Edit Assignment:
+![EditAssignment](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/1c981a7f-0ae9-4652-bb27-120974d5096f)
 
-[▲](#top)
----
+Skills:
+![Skills](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/34a33651-13b3-4c1e-83b9-88eb875f485f)
 
-<a name="system-flow--er-diagram"></a>
-## 🧭 System Flow & ER Diagram
+Edit Skills:
+![editSkill](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/19499950-076f-454e-9b2d-f092a3cc28ca)
 
-### 📊 Flowchart:
-[Flowchart](demo/flowchart.png)
+Search Skills by Volunteer:
+![searchSkillsByVolunteer](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/371c135b-7f2b-4c19-9493-4ce5120473d5)
 
-### 📐 ER Diagram:
-[ER Diagram](demo/er-diagram.png)
-- **Many-to-Many**: Volunteer ⬌ Nonprofit
-- **One-to-Many**: Nonprofit ⬌ Assignment ⬌ Timesheet
-- **One-to-Many**: Volunteer ⬌ Skills
+Timesheet:
+![Timesheet](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/34279147-1b10-4998-914b-7e6241f324f5)
 
-[▲](#top)
----
+Edit Timesheet:
+![editTimesheet](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/c5456d36-bb26-4240-a8c6-5e024a5191e3)
 
-<a name="project-structure"></a>
-## 📁 Project Structure
+Validation Example:
+![Validations](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/268f79e4-990b-4d74-84af-11e8621e2960)
 
-```
-Volunteer-Management-System/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/org/vms/volunteer/         # Java packages: controller, dao, service, dto, mapper
-│   │   ├── resources/
-│   │   │   ├── static/                     # Static resources like CSS, images
-│   │   │   ├── templates/                  # Thymeleaf HTML pages
-│   │   │   ├── application.properties
-│   │   │   ├── schema.sql, data.sql       # DB setup scripts
-│   └── test/                              # Unit tests
-├── pom.xml                                # Maven config
-└── README.md
-```
+SQL Database Preview:
+![MySQLWorkbenchDatabase](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/7094c2fe-f57b-4e59-84bc-90f76fe1f4c1)
 
-[▲](#top)
----
-
-<a name="how-to-run-eclipse-setup"></a>
-## 🛠️ How to Run (Eclipse Setup)
-
-### ⚙️ Prerequisites:
-- JDK 11+
-- Eclipse IDE with Maven support
-- MySQL Server running (port 3306)
-- MySQL DB name: `volunteer_db`
-
-### 📦 Steps:
-
-1. **Clone or unzip the project** into your workspace.
-2. Open Eclipse → `File > Import > Existing Maven Project` → Select the unzipped folder.
-3. In MySQL Workbench or CLI, run:
-   ```sql
-   CREATE DATABASE volunteer_db;
-   USE volunteer_db;
-   SOURCE schema.sql;
-   SOURCE data.sql;
-   ```
-4. Update `application.properties` (if needed):
-   ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/volunteer_db
-   spring.datasource.username=root
-   spring.datasource.password=your_password
-   ```
-5. Run the project:
-   - Right-click `VolunteerManagementSystemApplication.java` > `Run As > Java Application`
-6. Visit:  
-   `http://localhost:8080/` in your browser
-
-[▲](#top)
----
-
-<a name="live-demonstration"></a>
-## 📸 Live Demonstration
-
-[Video Demonstration](demo/live.mp4)
-
-[Screenshots](demo/screenshots/)
-
-[▲](#top)
----
-
-<a name="team-members"></a>
-## 👨‍💻 Team Members
-
-| Name            | Role                 | 
-|-----------------|----------------------|
-| Ankit Raj       | Team Lead & Docs     | 
-| Nishu Kaushik   | Frontend Developer   | 
-| Shweta Verma    | Backend Developer    |
-| Aditi Yadav     | Database Management  | 
-
-[▲](#top)
----
-
-<a name="references"></a>
-## 🔗 References
-
-- [Spring Boot Docs](https://spring.io/projects/spring-boot)
-- [Thymeleaf Docs](https://www.thymeleaf.org/)
-- [MySQL Docs](https://dev.mysql.com/doc/)
-- [Baeldung Java Guides](https://www.baeldung.com/)
-- [W3Schools](https://www.w3schools.com/)
-
-[▲](#top)
----
