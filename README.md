@@ -76,9 +76,6 @@ Co-ordinaid/
 - **Administrator:** Can log in, manage volunteer tasks, and track volunteer details and availability.
 - **Volunteer:** Can register, view available tasks, and update availability.
 
-## 📷 Screenshots
-
-*(Add screenshots here of the login page, admin dashboard, volunteer interface, etc.)*
 
 ## ✍️ Author
 
