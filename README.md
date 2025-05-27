@@ -75,16 +75,6 @@ Co-ordinaid/
 - **Coordinator:** Can log in, post updates or tasks, and manage event information.
 - **User:** Can view the latest messages and updates from the coordinator.
 
-## 📷 Screenshots
-
-*(You can add screenshots here of the login page, dashboard, coordinator panel, etc.)*
-
-## ✍️ Author
-
-- **Ankit Raj**  
-  Java Web Development Intern  
-  Prokits Digital  
-
 ## 📜 License
 
 This project is open-source and available under the [MIT License](LICENSE).
