@@ -1,59 +1,90 @@
+
 # Co-ordinaid
-Co-ordinaid for Nonprofit companies to help them organize their volunteers, assignments and timesheets. I used Spring Boot with JDBC Template to read and write to the database and Thymeleaf to display the frontend content.
 
-## Relationships
+**Co-ordinaid** is a web-based coordination platform built using Java, JSP, Servlets, JDBC, and MySQL. It is designed to streamline and simplify communication between coordinators and users for event or task management. The application allows coordinators to create and manage tasks, and users to view updates and interact efficiently, eliminating the need for manual messaging.
 
-many-to-many: Volunteers and Nonprofit 
+## 🧠 Project Summary
 
-one-to-many: Volunteer-Skill, Volunteer-Timesheet, Assignment-Timesheet, Nonporfit-Assignment
+**Objective:**  
+To create a centralized web platform where multiple users can receive real-time updates from a coordinator without relying on traditional messaging systems. This ensures efficiency, reduces time, and minimizes communication errors.
 
-## Visuals
-ERD:
+**Domain:** Web Application Development  
+**Tools & Technologies:**
+- **Frontend:** HTML, CSS, JSP
+- **Backend:** Java (Servlets), JDBC
+- **Database:** MySQL
+- **Server:** Apache Tomcat
 
-![UpdatedReversedEngineeredEERDiagram](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/eb5f5576-48d1-4d67-80e8-96cc6dec6216)
+## 🚀 Features
 
-Home Screen:
-![homeScreen](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/2cda397e-d7c1-4901-aecc-0cebd516063c)
+- **Coordinator login and authentication**
+- **Task and event creation** with descriptions
+- **User interface** for accessing the latest tasks and messages
+- **Real-time update system** for end-users
+- **Centralized message dashboard**
+- **Admin module** for coordinator control
 
-Nonprofit:
-![Nonprofit](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/5c28d954-a4a1-4252-bf0b-1d887a9546b2)
+## 📁 Project Structure
 
-Edit Nonprofit:
-![editNonprofit](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/c155d0a0-cfb2-4aae-9fec-cae3b9b59929)
+```
+Co-ordinaid/
+│
+├── src/                       # Java Servlet and Controller logic
+│   ├── AddMsg.java
+│   ├── Conn.java              # Database connection logic
+│   ├── Login.java
+│   └── Signup.java
+│
+├── WebContent/               # Frontend files and JSP pages
+│   ├── coordinator.jsp
+│   ├── user.jsp
+│   ├── login.jsp
+│   ├── signup.jsp
+│   └── style.css
+│
+├── Database/                 # MySQL schema
+│   └── coordinaid.sql
+│
+└── README.md                 # This file
+```
 
-Volunteer:
-![Volunteer](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/5cbb19ba-f167-4a6d-90ee-b019749e8c81)
+## ⚙️ Setup Instructions
 
-Edit Volunteer:
-![editNonprofit](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/8a181ba1-5af4-4b74-94cb-1389003f7024)
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/araj7491/Co-ordinaid.git
+   ```
 
-Volunteer Details:
-![volunteerDetails](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/55cba8c6-b20b-4031-abb3-b377d423c7f8)
+2. **Open in your Java IDE** (e.g., Eclipse or IntelliJ).
 
-Assignment:
-![Assignment](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/5ab7e615-eb5b-457e-ac6c-a8df2c39b638)
+3. **Import the `coordinaid.sql` file** into your MySQL server to create the required database and tables.
 
-Edit Assignment:
-![EditAssignment](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/1c981a7f-0ae9-4652-bb27-120974d5096f)
+4. **Configure your database connection** by updating the `Conn.java` file with your MySQL credentials:
+   ```java
+   String url = "jdbc:mysql://localhost:3306/coordinaid";
+   String user = "root";
+   String password = "your_password";
+   ```
 
-Skills:
-![Skills](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/34a33651-13b3-4c1e-83b9-88eb875f485f)
+5. **Run the project** on Apache Tomcat server.
 
-Edit Skills:
-![editSkill](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/19499950-076f-454e-9b2d-f092a3cc28ca)
+6. **Access the application** by navigating to `http://localhost:8080/Co-ordinaid/`.
 
-Search Skills by Volunteer:
-![searchSkillsByVolunteer](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/371c135b-7f2b-4c19-9493-4ce5120473d5)
+## 👤 Roles
 
-Timesheet:
-![Timesheet](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/34279147-1b10-4998-914b-7e6241f324f5)
+- **Coordinator:** Can log in, post updates or tasks, and manage event information.
+- **User:** Can view the latest messages and updates from the coordinator.
 
-Edit Timesheet:
-![editTimesheet](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/c5456d36-bb26-4240-a8c6-5e024a5191e3)
+## 📷 Screenshots
 
-Validation Example:
-![Validations](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/268f79e4-990b-4d74-84af-11e8621e2960)
+*(You can add screenshots here of the login page, dashboard, coordinator panel, etc.)*
 
-SQL Database Preview:
-![MySQLWorkbenchDatabase](https://github.com/Ro-Galvan/Volunteer-Management-System/assets/97912154/7094c2fe-f57b-4e59-84bc-90f76fe1f4c1)
+## ✍️ Author
 
+- **Ankit Raj**  
+  Java Web Development Intern  
+  Prokits Digital  
+
+## 📜 License
+
+This project is open-source and available under the [MIT License](LICENSE).
