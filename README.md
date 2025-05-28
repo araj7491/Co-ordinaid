@@ -91,6 +91,4 @@ Co-ordinaid/
 - [W3Schools](https://www.w3schools.com/)
 - [Baeldung Spring Guides](https://www.baeldung.com/)
 
-## 📹 Live Demonstration
 
-Watch the live demonstration video [here](https://github.com/araj7491/Co-ordinaid/blob/main/demo/live.mp4).
