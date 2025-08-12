@@ -80,8 +80,7 @@ Co-ordinaid/
 ## ✍️ Author
 
 - **Ankit Raj**  
-  Java Web Development Intern  
-  Prokits Digital  
+
 
 ## 📜 References
 
