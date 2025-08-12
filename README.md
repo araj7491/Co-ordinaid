@@ -3,7 +3,7 @@
 
 **Co-ordinaid** is a web-based platform designed to streamline the registration, organization, and management of volunteers for NGOs or events. It helps administrators track volunteer details, activities, and schedules while providing volunteers a platform to register, view tasks, and update their availability. Built using **Spring Boot** with **Thymeleaf** for the frontend and **MySQL** for the database, this project eliminates inefficiencies caused by manual or disconnected systems.
 
-## 🧠 Project Summary
+## ▶ Project Summary
 
 **Objective:**  
 To build a digital, cost-effective, and user-friendly solution for NGOs and event organizers to manage volunteers, track assignments, monitor timesheets, and utilize skill-based matching.
@@ -15,7 +15,7 @@ To build a digital, cost-effective, and user-friendly solution for NGOs and even
 - **Database:** MySQL
 - **Authentication:** Spring Security
 
-## 🚀 Features
+## ➤ Features
 
 - **Administrator login** with Spring Security for secure authentication
 - **Volunteer registration** and task management
@@ -24,7 +24,7 @@ To build a digital, cost-effective, and user-friendly solution for NGOs and even
 - **Comprehensive tracking** of volunteer hours, skills, and assignments
 - **User-friendly interface** ensuring quick adoption by administrators and volunteers
 
-## 📁 Project Structure
+## ▪ Project Structure
 
 ```
 Co-ordinaid/
@@ -49,7 +49,7 @@ Co-ordinaid/
 └── README.md                  # This file
 ```
 
-## ⚙️ Setup Instructions
+## → Setup Instructions
 
 1. **Clone the repository:**
    ```bash
@@ -71,18 +71,18 @@ Co-ordinaid/
 
 5. **Access the application** by navigating to `http://localhost:8080/`.
 
-## 👤 Roles
+## ◆ Roles
 
 - **Administrator:** Can log in, manage volunteer tasks, and track volunteer details and availability.
 - **Volunteer:** Can register, view available tasks, and update availability.
 
 
-## ✍️ Author
+## ► Author
 
 - **Ankit Raj**  
 
 
-## 📜 References
+## ▸ References
 
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)
 - [Thymeleaf Documentation](https://www.thymeleaf.org)
