@@ -1,0 +1,19 @@
+# Exclude generated/compiled files from language statistics
+bin/** linguist-generated=true
+
+# Mark documentation files as documentation
+*.md linguist-documentation
+README.* linguist-documentation
+
+# Vendor files
+src/main/resources/static/css/bootstrap*.css linguist-vendored
+src/main/resources/static/js/bootstrap*.js linguist-vendored
+src/main/resources/static/js/jquery*.js linguist-vendored
+
+# Force Java as primary language
+*.java linguist-language=Java
+
+# Detectable languages
+*.html linguist-detectable=true
+*.css linguist-detectable=true
+*.java linguist-detectable=true
